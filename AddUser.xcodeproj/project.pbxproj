@@ -15,6 +15,12 @@
 		FFA4B43F1A6103060096447A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA4B43E1A6103060096447A /* Images.xcassets */; };
 		FFA4B4421A6103060096447A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA4B4401A6103060096447A /* LaunchScreen.xib */; };
 		FFA4B44E1A6103060096447A /* AddUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B44D1A6103060096447A /* AddUserTests.m */; };
+		FFA4B4591A6104760096447A /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B4581A6104760096447A /* UserCell.m */; };
+		FFA4B45C1A6108D70096447A /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B45B1A6108D70096447A /* UIViewAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFA4B4611A612A290096447A /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA4B45D1A612A290096447A /* select.png */; };
+		FFA4B4621A612A290096447A /* select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA4B45E1A612A290096447A /* select@2x.png */; };
+		FFA4B4631A612A290096447A /* unselect.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA4B45F1A612A290096447A /* unselect.png */; };
+		FFA4B4641A612A290096447A /* unselect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA4B4601A612A290096447A /* unselect@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +48,14 @@
 		FFA4B4471A6103060096447A /* AddUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA4B44C1A6103060096447A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFA4B44D1A6103060096447A /* AddUserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddUserTests.m; sourceTree = "<group>"; };
+		FFA4B4571A6104760096447A /* UserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		FFA4B4581A6104760096447A /* UserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
+		FFA4B45A1A6108D70096447A /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		FFA4B45B1A6108D70096447A /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		FFA4B45D1A612A290096447A /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
+		FFA4B45E1A612A290096447A /* select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select@2x.png"; sourceTree = "<group>"; };
+		FFA4B45F1A612A290096447A /* unselect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unselect.png; sourceTree = "<group>"; };
+		FFA4B4601A612A290096447A /* unselect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unselect@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +97,18 @@
 		FFA4B42D1A6103060096447A /* AddUser */ = {
 			isa = PBXGroup;
 			children = (
+				FFA4B45D1A612A290096447A /* select.png */,
+				FFA4B45E1A612A290096447A /* select@2x.png */,
+				FFA4B45F1A612A290096447A /* unselect.png */,
+				FFA4B4601A612A290096447A /* unselect@2x.png */,
 				FFA4B4321A6103060096447A /* AppDelegate.h */,
 				FFA4B4331A6103060096447A /* AppDelegate.m */,
 				FFA4B4381A6103060096447A /* ViewController.h */,
 				FFA4B4391A6103060096447A /* ViewController.m */,
+				FFA4B45A1A6108D70096447A /* UIViewAdditions.h */,
+				FFA4B45B1A6108D70096447A /* UIViewAdditions.m */,
+				FFA4B4571A6104760096447A /* UserCell.h */,
+				FFA4B4581A6104760096447A /* UserCell.m */,
 				FFA4B43B1A6103060096447A /* Main.storyboard */,
 				FFA4B43E1A6103060096447A /* Images.xcassets */,
 				FFA4B4401A6103060096447A /* LaunchScreen.xib */,
@@ -203,7 +225,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFA4B43D1A6103060096447A /* Main.storyboard in Resources */,
+				FFA4B4611A612A290096447A /* select.png in Resources */,
+				FFA4B4641A612A290096447A /* unselect@2x.png in Resources */,
+				FFA4B4631A612A290096447A /* unselect.png in Resources */,
 				FFA4B4421A6103060096447A /* LaunchScreen.xib in Resources */,
+				FFA4B4621A612A290096447A /* select@2x.png in Resources */,
 				FFA4B43F1A6103060096447A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,7 +250,9 @@
 			files = (
 				FFA4B4341A6103060096447A /* AppDelegate.m in Sources */,
 				FFA4B4311A6103060096447A /* main.m in Sources */,
+				FFA4B45C1A6108D70096447A /* UIViewAdditions.m in Sources */,
 				FFA4B43A1A6103060096447A /* ViewController.m in Sources */,
+				FFA4B4591A6104760096447A /* UserCell.m in Sources */,
 				FFA4B4371A6103060096447A /* AddUser.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
