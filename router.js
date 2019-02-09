@@ -55,6 +55,7 @@ router.post("/newjuejin", function(req, res){
         }
         var date = Date.parse(new Date())
         var sql = "insert into juejin values ("+date+","+date+","+"\""+ originalUrl+"\""+","+"\""+screenshot+"\""+","+"\""+viewCount+"\""+","+"\""+summaryInfo+"\""+","+"\""+content+"\""+","+"\""+title+"\""+","+0+")"
+
         console.log("。。。。。。", sql)
         con.query(sql, function(err, results){
                 if (err) throw err;
