@@ -66,15 +66,49 @@ router.post("/newjuejin", function(req, res){
 router.post('/delete', function(req, res){
     req.setHeader('Content-Type','application/json;charset=utf-8')
     req.setHeader('Access-Control-Allow-origin', '*')
-    var title = ''
-    if (req.body.title){
-        title = req.body.title;
+    var id = ''
+    if (req.body.id){
+        id = req.body.id;
     } else {
         req.send(JSON.stringify({"error":'不能识别'}))
         return;
     }
-    var sql = ""
+    var sql = "delete from juejin where id = "+id
+    var con = mysql.createConnection({
+        "host":"localhost",
+        "user":"root",
+        "password":"897011805",
+        "database":"yhj"
+    })
+    con.query(sql, function(err, results){
+        if (err) throw err;
+        req.send(JSON.stringify({"success":"删除成功"}))
+    })
+})
 
+router.get('/search', function(req, res){
+    req.setHeader('Content-Type', 'applpcation/json;charset=utf-8')
+    req.setHeader('Access-Control-Allor-Origin', '*')
+    var keyword = "";
+    if (req.query.keyword){
+        keyword = req.query.keyword
+    } else {
+        req.send(JSON.stringify({"error":'不能识别'}))
+        return;
+    }
+
+    var sql = "select *from juejin where title like " + "\"%" + keyword + "\""
+    console.log("................", sql)
+    con.query(sql, function(err, results){
+        if (err) throw err;
+        var datas=[];
+        for (var i=0; i<results.length; i++){
+            var va = results[i]
+            var value = {"buildTime":va['buildTime'], "updatedAt":va["updatedAt"], "originalUrl":va["originalUrl"], "screenshot":va["screenshot"], "content":va["content"], "title":va["title"], "viewsCount":va["viewsCount"], "summaryInfo":va["summaryInfo"], "id":va["id"]}
+            datas.push(value)
+        }
+        res.send(JSON.stringify({"data":datas}))
+    })
 })
 
 router.get('/juejin', function(req, res){
@@ -97,10 +131,10 @@ router.get('/juejin', function(req, res){
                 var datas=[];
                 for (var i=0; i<results.length; i++){
                     var va = results[i]
-                    var value = {"buildTime":va['buildTime'], "updatedAt":va["updatedAt"], "originalUrl":va["originalUrl"], "screenshot":va["screenshot"], "content":va["content"], "title":va["title"], "viewsCount":va["viewsCount"], "summaryInfo":va["summaryInfo"]}
-                datas.push(value)
-        }
-        res.send(JSON.stringify({"data":datas}))
+                    var value = {"buildTime":va['buildTime'], "updatedAt":va["updatedAt"], "originalUrl":va["originalUrl"], "screenshot":va["screenshot"], "content":va["content"], "title":va["title"], "viewsCount":va["viewsCount"], "summaryInfo":va["summaryInfo"], "id":va["id"]}
+                    datas.push(value)
+                }
+                res.send(JSON.stringify({"data":datas}))
         })
 })
 
