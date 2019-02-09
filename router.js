@@ -20,37 +20,37 @@ router.post("/newjuejin", function(req, res){
         if (body.originalUrl) {
             originalUrl = body.originalUrl
         } else {
-            res.send(JSON.stringify({"ERROR":"originalUrl是必要的"}))
+            res.send(JSON.stringify({"error":"originalUrl是必要的"}))
             return
         }
         if (body.screenshot) {
             screenshot = body.screenshot
         } else {
-            res.send(JSON.stringify({"ERROR":"screenshot是必要的"}))
+            res.send(JSON.stringify({"error":"screenshot是必要的"}))
             return
         }
         if (body.viewCount) {
             viewCount = body.viewCount
         } else {
-            res.send(JSON.stringify({"ERROR":"viewCount是必要的"}))
+            res.send(JSON.stringify({"error":"viewCount是必要的"}))
             return
         }
         if (body.summaryInfo) {
             summaryInfo = body.summaryInfo
         } else {
-            res.send(JSON.stringify({"ERROR":"summaryInfo是必要的"}))
+            res.send(JSON.stringify({"error":"summaryInfo是必要的"}))
             return
         }
         if (body.content) {
             content = body.content
         } else {
-            res.send(JSON.stringify({"ERROR":"content是必要的"}))
+            res.send(JSON.stringify({"error":"content是必要的"}))
             return
         }
         if (body.title) {
             title = body.title
         } else {
-            res.send(JSON.stringify({"ERROR":"title是必要的"}))
+            res.send(JSON.stringify({"error":"title是必要的"}))
             return
         }
         var date = Date.parse(new Date())
@@ -58,7 +58,7 @@ router.post("/newjuejin", function(req, res){
         console.log("。。。。。。", sql)
         con.query(sql, function(err, results){
                 if (err) throw err;
-                res.send("sucess!!")
+                res.send(JSON.stringify({"success":"success"}))
         })
 })
 
