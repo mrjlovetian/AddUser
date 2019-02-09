@@ -64,13 +64,13 @@ router.post("/newjuejin", function(req, res){
 })
 
 router.post('/delete', function(req, res){
-    req.setHeader('Content-Type','application/json;charset=utf-8')
-    req.setHeader('Access-Control-Allow-origin', '*')
+    res.setHeader('Content-Type','application/json;charset=utf-8')
+    res.setHeader('Access-Control-Allow-origin', '*')
     var id = ''
     if (req.body.id){
         id = req.body.id;
     } else {
-        req.send(JSON.stringify({"error":'不能识别'}))
+        res.send(JSON.stringify({"error":'不能识别'}))
         return;
     }
     var sql = "delete from juejin where id = "+id
@@ -82,18 +82,18 @@ router.post('/delete', function(req, res){
     })
     con.query(sql, function(err, results){
         if (err) throw err;
-        req.send(JSON.stringify({"success":"删除成功"}))
+        res.send(JSON.stringify({"success":"删除成功"}))
     })
 })
 
 router.get('/search', function(req, res){
-    req.setHeader('Content-Type', 'applpcation/json;charset=utf-8')
-    req.setHeader('Access-Control-Allor-Origin', '*')
+    res.setHeader('Content-Type', 'applpcation/json;charset=utf-8')
+    res.setHeader('Access-Control-Allor-Origin', '*')
     var keyword = "";
     if (req.query.keyword){
         keyword = req.query.keyword
     } else {
-        req.send(JSON.stringify({"error":'不能识别'}))
+        res.send(JSON.stringify({"error":'不能识别'}))
         return;
     }
 
