@@ -54,12 +54,26 @@ router.post("/newjuejin", function(req, res){
             return
         }
         var date = Date.parse(new Date())
-        var sql = "insert into juejin values ("+date+","+date+","+"\""+ originalUrl+"\""+","+"\""+screenshot+"\""+","+"\""+viewCount+"\""+","+"\""+summaryInfo+"\""+","+"\""+content+"\""+","+"\""+title+"\""+")"
+        var sql = "insert into juejin values ("+date+","+date+","+"\""+ originalUrl+"\""+","+"\""+screenshot+"\""+","+"\""+viewCount+"\""+","+"\""+summaryInfo+"\""+","+"\""+content+"\""+","+"\""+title+"\""+","+0+")"
         console.log("。。。。。。", sql)
         con.query(sql, function(err, results){
                 if (err) throw err;
                 res.send(JSON.stringify({"success":"success"}))
         })
+})
+
+router.post('/delete', function(req, res){
+    req.setHeader('Content-Type','application/json;charset=utf-8')
+    req.setHeader('Access-Control-Allow-origin', '*')
+    var title = ''
+    if (req.body.title){
+        title = req.body.title;
+    } else {
+        req.send(JSON.stringify({"error":'不能识别'}))
+        return;
+    }
+    var sql = ""
+
 })
 
 router.get('/juejin', function(req, res){
