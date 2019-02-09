@@ -99,6 +99,12 @@ router.get('/search', function(req, res){
 
     var sql = "select *from juejin where title like " + "\"%" + keyword + "\""
     console.log("................", sql)
+    var con = mysql.createConnection({
+        "host":"localhost",
+        "user":"root",
+        "password":"897011805",
+        "database":"yhj"
+    })
     con.query(sql, function(err, results){
         if (err) throw err;
         var datas=[];
