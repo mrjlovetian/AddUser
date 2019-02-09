@@ -67,6 +67,7 @@ router.post('/delete', function(req, res){
     res.setHeader('Content-Type','application/json;charset=utf-8')
     res.setHeader('Access-Control-Allow-origin', '*')
     var id = ''
+    console.log('...........'+req.body)
     if (req.body.id){
         id = req.body.id;
     } else {
